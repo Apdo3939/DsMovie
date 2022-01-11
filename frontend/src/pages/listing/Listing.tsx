@@ -1,3 +1,4 @@
+import MovieCard from "components/movieCard/MovieCard";
 import Pagination from "components/pagination/Pagination";
 import "./styles.css";
 
@@ -7,8 +8,34 @@ function Listing() {
       <div className="dsmovie-listing-container">
         <Pagination />
       </div>
-
-      <h1>Listing</h1>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-2">
+            <MovieCard />
+          </div>
+          <div className="col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-2">
+            <MovieCard />
+          </div>
+          <div className="col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-2">
+            <MovieCard />
+          </div>
+          <div className="col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-2">
+            <MovieCard />
+          </div>
+          <div className="col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-2">
+            <MovieCard />
+          </div>
+          <div className="col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-2">
+            <MovieCard />
+          </div>
+          <div className="col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-2">
+            <MovieCard />
+          </div>
+          <div className="col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-2">
+            <MovieCard />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
