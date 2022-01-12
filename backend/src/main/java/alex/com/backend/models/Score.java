@@ -1,12 +1,7 @@
 package alex.com.backend.models;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -15,19 +10,18 @@ import javax.persistence.Table;
 @Table(name = "tb_score")
 public class Score {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@EmbeddedId
+	private ScorePK id = new ScorePK();
 	
 	private Double value;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	/*@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "movie_id")
 	private Movie movie;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
-	private User user;
+	private User user;*/
 	
 	
 	public Score() {
@@ -71,6 +65,22 @@ public class Score {
 
 	public void setValue(Double value) {
 		this.value = value;
+	}
+
+	public ScorePK getId() {
+		return id;
+	}
+
+	public void setId(ScorePK id) {
+		this.id = id;
+	}
+	
+	public void setMovie(Movie movie) {
+		id.setMovie(movie);
+	}
+	
+	public void setUser(User user) {
+		id.setUser(user);
 	}
 	
 }
