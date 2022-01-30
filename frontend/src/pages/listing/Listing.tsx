@@ -12,7 +12,7 @@ function Listing() {
     last: true,
     totalPages: 0,
     totalElements: 0,
-    size: 10,
+    size: 12,
     number: 0,
     first: true,
     numberOfElements: 0,
@@ -21,19 +21,23 @@ function Listing() {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/movies?size=5&page=${pageNumber}&sort=id`)
+      .get(`${BASE_URL}/movies?size=${page.size}&page=${pageNumber}&sort=id`)
       .then((response) => {
         const data = response.data as MoviePage;
         setPage(data);
         setPageNumber(data.number);
       })
       .catch(() => {});
-  }, [pageNumber]);
+  }, [pageNumber, page.size]);
+
+  const handlePageChange = (newPageNumber: number) => {
+    setPageNumber(newPageNumber);
+  };
 
   return (
     <>
       <div className="dsmovie-listing-container">
-        <Pagination />
+        <Pagination page={page} onChange={handlePageChange} />
       </div>
       <div className="container">
         <div className="row">

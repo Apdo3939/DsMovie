@@ -2,8 +2,6 @@ package alex.com.backend.dtos;
 
 import java.io.Serializable;
 
-import alex.com.backend.models.Movie;
-
 public class ScoreDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -11,13 +9,12 @@ public class ScoreDTO implements Serializable {
 	private Long movieId;
 	private String email;
 	private Double score;
-	
 
 	public ScoreDTO() {
-		// TODO Auto-generated constructor stub
+
 	}
 
-	//Getters and Setters
+	// Getters and Setters
 	public Long getMovieId() {
 		return movieId;
 	}
@@ -41,5 +38,5 @@ public class ScoreDTO implements Serializable {
 	public void setScore(Double score) {
 		this.score = score;
 	}
-	
+
 }
